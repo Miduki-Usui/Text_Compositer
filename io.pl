@@ -4,17 +4,14 @@ sub editfile{
 	local($input)=$_[1];
 
 	@in=();
-	$out="\n";
+	$out="";
 
 	open(IN,$input);
 	@in = <IN>;
-	foreach $out (@in) {
-		print $out;
-	}
 	close(IN);
 
 	open(OUT,$output);
-	print(OUT $out);
+	print(OUT @in);
 	close(OUT);
 
 }
